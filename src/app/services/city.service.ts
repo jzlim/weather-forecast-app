@@ -8,9 +8,7 @@ export class CityService {
   private http = inject(HttpClient);
   private apiUrlPath = '/api/city';
 
-  constructor(@Inject(APP_CONFIG) private appConfig: AppConfig) {
-    console.log('appConfig', appConfig);
-  }
+  constructor(@Inject(APP_CONFIG) private appConfig: AppConfig) {}
 
   getCities() {
     return this.http.get<City[]>(

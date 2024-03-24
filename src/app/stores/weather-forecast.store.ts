@@ -69,7 +69,6 @@ export const WeatherForecastStore = signalStore(
       },
       updateSearchQuery: (value: string) => {
         patchState(store, { searchQuery: value });
-        console.log(store.searchQuery());
       },
     };
   })
