@@ -1,7 +1,7 @@
-<div class="container m-auto w-full sm:w-1/4">
+<div class="container m-auto w-full sm:w-1/3">
   <h1 class="text-center py-12 text-3xl font-bold">Weather Forecast App</h1>
 
-  <div class="mx-6">
+  <div class="mx-2 mb-8">
     <label class="input input-bordered flex items-center gap-2">
       <input
         #searchInput
@@ -48,6 +48,12 @@
       </div>
       }
     </div>
+    }
+  </div>
+  <div class="mx-2">
+    @for (forecast of store.forecasts(); track forecast.id; let first = $first)
+    {
+    <app-card [forecast]="forecast" [isToday]="first"></app-card>
     }
   </div>
 </div>

@@ -1,18 +1,18 @@
 import { NgClass } from '@angular/common';
 import { Component, ElementRef, inject, ViewChild } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { CardComponent } from './components/card/card.component';
 import { City } from './models';
 import { CityService } from './services/city.service';
 import { WeatherForecastService } from './services/weather-forecast.service';
 import { WeatherForecastStore } from './stores/weather-forecast.store';
-import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [NgClass, FormsModule],
+  imports: [NgClass, FormsModule, CardComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
-  providers: [WeatherForecastStore, CityService, WeatherForecastService],
+  providers: [WeatherForecastStore],
 })
 export class AppComponent {
   @ViewChild('searchInput') searchInput!: ElementRef<HTMLElement>;
